@@ -1,0 +1,30 @@
+
+   <!DOCTYPE html>
+   <html lang="ru">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+       <title>Результаты анкеты</title>
+   </head>
+   <body>
+       <div class="container mt-5">
+           <h2>Результаты анкеты</h2>
+           <div class="row">
+               {% for submission in submissions %}
+                   <div class="col-md-4">
+                       <div class="card mb-4">
+                           <div class="card-body">
+                               <h5 class="card-title">{{ submission.name }}</h5>
+                               <p class="card-text">Возраст: {{ submission.age }}</p>
+                               <p class="card-text">Город: {{ submission.city }}</p>
+                               <p class="card-text">Хобби: {{ submission.hobby }}</p>
+                           </div>
+                       </div>
+                   </div>
+               {% endfor %}
+           </div>
+           <a href="/" class="btn btn-secondary">Вернуться</a>
+       </div>
+   </body>
+   </html>
